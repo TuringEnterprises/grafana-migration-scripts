@@ -24,8 +24,10 @@ if(!parsedJSON.panels) {
 }
 
 parsedJSON.panels.forEach((panel: any) => {
-    panel.datasource.type = datasource
-    panel.datasource.uid = uuid 
+    if(panel.datasource?.type === 'prometheus'){
+        panel.datasource.type = datasource
+        panel.datasource.uid = uuid 
+    }
 })
 
 
