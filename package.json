@@ -1,18 +1,37 @@
 {
   "name": "@turingenterprises/grafana-migrate",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "author": "Danybaev Sanzhar",
+  "bin": "./lib/dashboard.migration.js",
   "main": "./lib/dashboard.migration.js",
+  "types": "./lib/dashboard.migration.d.ts",
   "files": [
     "lib"
   ],
+  "license": "UNLICENSED",
   "scripts": {
     "build": "rimraf lib && tsc",
     "prepublishOnly": "npm run build"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": 5
+          }
+        }
+      ]
+    ]
   },
   "devDependencies": {
     "@types/node": "^18.11.3",
     "rimraf": "^3.0.2",
     "ts-node": "^10.9.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com:TuringEnterprises/grafana-migration-scripts.git"
   }
 }
