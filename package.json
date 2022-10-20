@@ -1,6 +1,6 @@
 {
   "name": "@turingenterprises/grafana-migrate",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "author": "Danybaev Sanzhar",
   "bin": "./bin/grafana-migrate",
   "main": "./lib/dashboard.migration.js",
