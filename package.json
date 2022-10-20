@@ -1,5 +1,18 @@
 {
-  "dependencies": {
-    "@types/node": "^18.11.3"
+  "name": "@turingenterprises/grafana-migrate",
+  "version": "1.0.0",
+  "author": "Danybaev Sanzhar",
+  "main": "./lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "rimraf lib && tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.3",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.9.1"
   }
 }
