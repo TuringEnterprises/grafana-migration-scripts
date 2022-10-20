@@ -12,5 +12,5 @@ npm i -g @turingenterprises/grafana-migrate
 ### Run the script 
 
 ```bash
-@turingenterprises/grafana-migrate EXPORT_JSON_PATH DATASOURCE_NAME DATASOURCE_UID
+grafana-migrate EXPORT_JSON_PATH DATASOURCE_NAME DATASOURCE_UID
 ```
