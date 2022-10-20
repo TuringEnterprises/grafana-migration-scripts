@@ -10,3 +10,11 @@ if(!file || !datasource || !uuid) {
   process.exit(1)
 }
 
+try{
+const fileContent = fs.readFileSync(path.resolve(file), 'utf-8')
+
+console.log(fileContent)
+} catch(e: any){
+    console.error(e.message)
+}
+
