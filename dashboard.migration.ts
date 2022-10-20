@@ -11,9 +11,28 @@ if(!file || !datasource || !uuid) {
 }
 
 try{
-const fileContent = fs.readFileSync(path.resolve(file), 'utf-8')
 
-console.log(fileContent)
+const filePath = path.resolve(file)
+
+const fileContent = fs.readFileSync(filePath, 'utf-8')
+
+const parsedJSON = JSON.parse(fileContent)
+
+if(!parsedJSON.panels) {
+    console.error('Provided file is not a valid dashboard')
+    process.exit()
+}
+
+parsedJSON.panels.forEach((panel: any) => {
+    panel.datasource.type = datasource
+    panel.datasource.uid = uuid 
+})
+
+
+fs.writeFileSync(filePath,JSON.stringify(parsedJSON),{encoding:'utf8',flag:'w'})
+
+console.log('Successfully updated datasource')
+
 } catch(e: any){
     console.error(e.message)
 }
